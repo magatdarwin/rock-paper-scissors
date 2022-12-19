@@ -8,10 +8,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
 
-    if (!CHOICES.includes(playerSelection)) {
-        return 'Invalid choice! Please choose between rock, paper and scissors only.';
-    }
-    else if (playerSelection === computerSelection) {
+    if (playerSelection === computerSelection) {
         return "It's a tie!";
     }
     // Winning scenarios
@@ -32,8 +29,15 @@ function game() {
 
     for (i = 1; i < 6; i++) {
         computerSelection = getComputerChoice();
-        playerSelection = prompt(`[ROUND ${i}] Choose between rock, paper and scissors`);
-      
+        while (true) {
+            playerSelection = prompt(`[ROUND ${i}] Choose between rock, paper and scissors`).toLowerCase();
+
+            if (!CHOICES.includes(playerSelection)) {
+                alert('Invalid choice! Please choose between rock, paper and scissors only.');
+            }
+            else break;
+        }
+
         console.log(playRound(playerSelection, computerSelection));
     }
 }

@@ -21,7 +21,6 @@ function playRound(playerSelection, computerSelection) {
     else {
         return `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}!`;
     }
-
 }
 
 function game() {

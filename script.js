@@ -16,10 +16,10 @@ function playRound(playerSelection, computerSelection) {
         playerSelection === 'scissors' && computerSelection === 'paper' ||
         playerSelection === 'paper' && computerSelection === 'rock'
         ) {
-        return `You win! ${playerSelection} beats ${computerSelection}!`;
+        return `You win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}!`;
     }
     else {
-        return `You lose! ${computerSelection} beats ${playerSelection}!`;
+        return `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}!`;
     }
 
 }
@@ -40,4 +40,8 @@ function game() {
 
         console.log(playRound(playerSelection, computerSelection));
     }
+}
+
+function capitalizeFirstLetter(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
 }

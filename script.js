@@ -28,8 +28,12 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    computerSelection = getComputerChoice();
-    playerSelection = prompt('Choose between rock, paper and scissors');
-  
-    console.log(playRound(playerSelection, computerSelection));
+    alert("Welcome to Rock Paper Scissors! You are about to play 5 rounds against the computer. Let's get started!");
+
+    for (i = 1; i < 6; i++) {
+        computerSelection = getComputerChoice();
+        playerSelection = prompt(`[ROUND ${i}] Choose between rock, paper and scissors`);
+      
+        console.log(playRound(playerSelection, computerSelection));
+    }
 }

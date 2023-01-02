@@ -5,22 +5,32 @@ function getComputerChoice() {
     return CHOICES[Math.floor(Math.random() * 3)]; 
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+function playRound() {
+    const computerSelection = getComputerChoice();
+    const playerSelection = this.id.toLowerCase();
+    let resultText = '';
+
+    // Handles cases where the html id values are edited by the user
+    if (!CHOICES.includes(playerSelection)) {
+        alert('Invalid choice! Please use the buttons properly.');
+    }
 
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        resultText = "It's a tie!";
     }
     // Winning scenarios
     else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
         playerSelection === 'scissors' && computerSelection === 'paper' ||
         playerSelection === 'paper' && computerSelection === 'rock'
         ) {
-        return `You win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}!`;
+        resultText = `You win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}!`;
     }
     else {
-        return `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}!`;
+        resultText = `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}!`;
     }
+
+    let result = document.querySelector('.result');
+    result.textContent = resultText;
 }
 
 function game() {
@@ -44,3 +54,6 @@ function game() {
 function capitalizeFirstLetter(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+const playerChoices = document.querySelectorAll('.choice');
+playerChoices.forEach(playerChoice => playerChoice.addEventListener('click', playRound));

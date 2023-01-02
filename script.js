@@ -1,4 +1,6 @@
 const CHOICES = ['rock', 'paper', 'scissors'];
+let PLAYER_SCORE = 0;
+let COMPUTER_SCORE = 0;
 
 function getComputerChoice() {    
     // Returns a random value between indexes 0 and 2
@@ -24,13 +26,16 @@ function playRound() {
         playerSelection === 'paper' && computerSelection === 'rock'
         ) {
         resultText = `You win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}!`;
+        PLAYER_SCORE++;
     }
     else {
         resultText = `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}!`;
+        COMPUTER_SCORE++;
     }
 
     let result = document.querySelector('.result');
     result.textContent = resultText;
+    updateScore();
 }
 
 function game() {
@@ -53,6 +58,14 @@ function game() {
 
 function capitalizeFirstLetter(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function updateScore() {
+    let playerScore = document.querySelector('.score .player');
+    let computerScore = document.querySelector('.score .computer');
+    
+    playerScore.textContent = `Player: ${PLAYER_SCORE}`;
+    computerScore.textContent = `Computer: ${COMPUTER_SCORE}`;
 }
 
 const playerChoices = document.querySelectorAll('.choice');

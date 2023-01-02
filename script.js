@@ -64,9 +64,7 @@ function updateScore() {
     let playerScore = document.querySelector('.score .player');
     let computerScore = document.querySelector('.score .computer');
     
-    // playerScore.textContent = `Player: ${PLAYER_SCORE}`;
     playerScore.textContent = PLAYER_SCORE;
-    // computerScore.textContent = `Computer: ${COMPUTER_SCORE}`;
     computerScore.textContent = COMPUTER_SCORE;
 }
 

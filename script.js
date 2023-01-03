@@ -84,5 +84,18 @@ function toggleModal() {
     modal.classList.toggle("show-modal");
 }
 
+function resetGame() {
+    PLAYER_SCORE = 0;
+    COMPUTER_SCORE = 0;
+    let result = document.querySelector('.result');
+
+    updateScore();
+    result.textContent = '';
+    toggleModal();
+}
+
 const playerChoices = document.querySelectorAll('.choice');
 playerChoices.forEach(playerChoice => playerChoice.addEventListener('click', playRound));
+
+const resetButton = document.querySelector('.reset-game');
+resetButton.addEventListener('click', resetGame);

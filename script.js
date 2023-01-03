@@ -66,6 +66,22 @@ function updateScore() {
     
     playerScore.textContent = PLAYER_SCORE;
     computerScore.textContent = COMPUTER_SCORE;
+
+    if (PLAYER_SCORE === 5 || COMPUTER_SCORE === 5) {
+        displayWinner();
+    }
+}
+
+function displayWinner() {
+    let winner = document.querySelector('.winner');
+
+    toggleModal();
+    winner.textContent = PLAYER_SCORE === 5 ? 'You win!' : 'The Computer wins!';
+}
+
+function toggleModal() {
+    const modal = document.querySelector('.gameover');
+    modal.classList.toggle("show-modal");
 }
 
 const playerChoices = document.querySelectorAll('.choice');

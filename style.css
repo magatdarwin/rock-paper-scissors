@@ -81,6 +81,11 @@ body {
   background-color: #22A39F;
 }
 
+.selection img {
+  height: 100%;
+  width: 100%;
+}
+
 .result {
   display: flex;
   text-align: center;

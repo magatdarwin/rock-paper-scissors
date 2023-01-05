@@ -2,6 +2,19 @@ const CHOICES = ['rock', 'paper', 'scissors'];
 let PLAYER_SCORE = 0;
 let COMPUTER_SCORE = 0;
 
+const ICON_FOLDER = 'images';
+const COMPUTER_ICONS = {
+    rock: `./${ICON_FOLDER}/fight_computer_rock.png`,
+    paper: `./${ICON_FOLDER}/fight_computer_paper.png`,
+    scissors: `./${ICON_FOLDER}/fight_computer_scissors.png` 
+};
+
+const PLAYER_ICONS = {
+    rock: `./${ICON_FOLDER}/fight_player_rock.png`,
+    paper: `./${ICON_FOLDER}/fight_player_paper.png`,
+    scissors: `./${ICON_FOLDER}/fight_player_scissors.png`
+};
+
 function getComputerChoice() {    
     // Returns a random value between indexes 0 and 2
     return CHOICES[Math.floor(Math.random() * 3)]; 
@@ -12,6 +25,7 @@ function playRound() {
     const playerSelection = this.id.toLowerCase();
     let resultText = '';
 
+    updateIcons(playerSelection, computerSelection);
     // Handles cases where the html id values are edited by the user
     if (!CHOICES.includes(playerSelection)) {
         alert('Invalid choice! Please use the buttons properly.');
@@ -36,6 +50,33 @@ function playRound() {
     let result = document.querySelector('.result');
     result.textContent = resultText;
     updateScore();
+}
+
+function updateIcons(playerSelection, computerSelection) {
+    resetIcons();
+    let playerFrame = document.querySelector('.selection#player');
+    let computerFrame = document.querySelector('.selection#computer');
+
+    let playerImage = document.createElement('img');
+    let computerImage = document.createElement('img');
+    
+    playerImage.setAttribute('src', PLAYER_ICONS[playerSelection]);
+    playerImage.setAttribute('alt', `Image of ${playerSelection}`);
+
+    computerImage.setAttribute('src', COMPUTER_ICONS[computerSelection]);
+    computerImage.setAttribute('alt', `Image of ${computerSelection}`);
+
+    playerFrame.appendChild(playerImage);
+    computerFrame.appendChild(computerImage);
+}
+
+
+function resetIcons() {
+    let playerImage = document.querySelector('.selection#player > img');
+    let computerImage = document.querySelector('.selection#computer > img');
+
+    if (playerImage) playerImage.remove();
+    if (computerImage) computerImage.remove();
 }
 
 function capitalizeFirstLetter(word) {
@@ -71,6 +112,7 @@ function resetGame() {
     COMPUTER_SCORE = 0;
     let result = document.querySelector('.result');
 
+    resetIcons();
     updateScore();
     result.textContent = 'Waiting for input';
     toggleModal();

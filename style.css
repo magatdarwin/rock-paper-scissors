@@ -1,8 +1,16 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
+  margin: 0;
+}
+
+.header {
+  background-color: #222222;
+  padding: 50px;
+  color: #22A39F;
+  font-size: 60px;
+  text-align: center;
 }
 
 .gameover {

@@ -72,7 +72,7 @@ function resetGame() {
     let result = document.querySelector('.result');
 
     updateScore();
-    result.textContent = '';
+    result.textContent = 'Waiting for input';
     toggleModal();
 }
 

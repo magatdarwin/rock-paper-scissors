@@ -43,3 +43,14 @@ body {
   transform: scale(1.0);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
+
+.score {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #F3EFE0;
+  color: #434242;
+  font-weight: 900;
+  font-size: 30px;
+  padding: 20px;
+}

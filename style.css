@@ -97,15 +97,14 @@ body {
   display: flex;
   justify-content: space-between;
   width: 900px;
-  height: 250px;
+  height: 300px;
 }
 
 .versus .selection {
-  width: 250px;
+  width: 300px;
 }
 
 .versus .selection#computer {
-  width: 250px;
   transform: scaleX(-1);
 }
 
@@ -121,7 +120,7 @@ body {
   align-items: center;
   width: 280px;
   color:#F3EFE0;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 100;
   line-height: 24pt;
 }

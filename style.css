@@ -14,7 +14,7 @@ body {
   background-color: #222222;
   padding: 50px;
   color: #22A39F;
-  font-size: 60px;
+  font-size: 48px;
   text-align: center;
 }
 
@@ -36,10 +36,20 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 1rem 1.5rem;
-  width: 24rem;
+  background-color: #434242;
+  color: #f3efe0;
+  padding: 20px 40px;
+  text-align: center;
   border-radius: 0.5rem;
+  font-weight: 100;
+  font-size: 24px;
+}
+
+.gameover-content > button {
+  background-color: #222222;
+  color: #22a39f;
+  padding: 15px;
+  width: 200px;
 }
 
 .show-modal {
@@ -52,14 +62,22 @@ body {
 .score {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   gap: 20px;
   background-color: #F3EFE0;
   color: #434242;
   font-size: 18px;
   font-weight: 900;
-  width: 700px;
-  padding: 20px;
+  width: 900px;
+  padding: 10px;
   margin: 30px 0;
+}
+
+.score div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2pt;
 }
 
 .game {
@@ -73,12 +91,12 @@ body {
 .versus {
   display: flex;
   justify-content: space-between;
-  width: 700px;
-  height: 200px;
+  width: 900px;
+  height: 250px;
 }
 
 .versus .selection {
-  width: 200px;
+  width: 250px;
 }
 
 .selection img {
@@ -91,7 +109,7 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 280px;
   color:#F3EFE0;
   font-size: 20px;
   font-weight: 100;
@@ -100,14 +118,14 @@ body {
 
 .options {
   display: flex;
-  justify-content: space-between;
-  width: 700px;
-  margin: 30px;
+  justify-content: space-around;
+  width: 900px;
+  margin: 30px 0;
 }
 
 .options .choice {
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: auto;
   background-color: #222222;
 }
 

@@ -22,7 +22,7 @@ function playRound() {
     // Handles cases where the html id values are edited by the user
     if (!CHOICES.includes(playerSelection)) {
         alert('Button values were changed. Reloading page.');
-        resetGame();
+        location.reload();
     }
 
     if (playerSelection === computerSelection) {
@@ -101,7 +101,14 @@ function toggleModal() {
 }
 
 function resetGame() {
-    location.reload();
+    PLAYER_SCORE = 0;
+    COMPUTER_SCORE = 0;
+    let result = document.querySelector('.result');
+    result.textContent = 'Waiting for input';
+
+    resetIcons();
+    updateScore();
+    toggleModal();
 }
 
 const playerChoices = document.querySelectorAll('.choice');

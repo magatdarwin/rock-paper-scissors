@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./script.js"></script>
-  <title>Rock Paper Scissors</title>
-</head>
-<body>
-  <script>
-    game();
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <div class="header">ROCK PAPER SCISSORS</div>
+
+    <main class="game">
+      <div class="score">
+        <div>
+          <p>Player</p>  
+          <p class="player">0</p>
+        </div>
+        <div>SCOREBOARD</div>
+        <div>
+          <p>Computer</p>
+          <p class="computer">0</p>
+        </div>
+      </div>
+
+      <div class="versus">
+        <div class="selection" id="player"></div>
+        <div class="result">Waiting for input</div>
+        <div class="selection" id="computer"></div>
+      </div>
+
+      <div class="options">
+        <button class="choice" id="rock"><img src="./images/choice_rock.png" alt=""></button>
+        <button class="choice" id="paper"><img src="./images/choice_paper.png" alt=""></button>
+        <button class="choice" id="scissors"><img src="./images/choice_scissors.png" alt=""></button>
+      </div>
+    </main>
+
+    <div class="gameover">
+      <div class="gameover-content">
+        <p>Game Over!</p>
+        <p class="winner"></p>
+        <button class="reset-game">Play Again</button>
+      </div>
+    </div>
+  </body>
 </html>

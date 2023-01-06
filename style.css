@@ -148,3 +148,17 @@ body {
 .choice:hover {
   background-color: #22A39F;
 }
+
+footer {
+  background-color: #222222;
+  color: #F3EFE0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  text-align: center;
+  padding: 20px;
+}
+
+footer > a {
+  font-family: inherit;
+  color: inherit;
+}

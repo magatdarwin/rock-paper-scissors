@@ -16,13 +16,14 @@ function getComputerChoice() {
 
 function playRound() {
     const computerSelection = getComputerChoice();
-    const playerSelection = this.id.toLowerCase();
+    const playerSelection = this.id;
     let resultText = '';
 
     updateIcons(playerSelection, computerSelection);
     // Handles cases where the html id values are edited by the user
     if (!CHOICES.includes(playerSelection)) {
-        alert('Invalid choice! Please use the buttons properly.');
+        alert('Button values were changed. Reloading page.');
+        resetGame();
     }
 
     if (playerSelection === computerSelection) {
@@ -101,14 +102,7 @@ function toggleModal() {
 }
 
 function resetGame() {
-    PLAYER_SCORE = 0;
-    COMPUTER_SCORE = 0;
-    let result = document.querySelector('.result');
-
-    resetIcons();
-    updateScore();
-    result.textContent = 'Waiting for input';
-    toggleModal();
+    location.reload();
 }
 
 const playerChoices = document.querySelectorAll('.choice');

@@ -3,16 +3,10 @@ let PLAYER_SCORE = 0;
 let COMPUTER_SCORE = 0;
 
 const ICON_FOLDER = 'images';
-const COMPUTER_ICONS = {
-    rock: `./${ICON_FOLDER}/fight_computer_rock.png`,
-    paper: `./${ICON_FOLDER}/fight_computer_paper.png`,
-    scissors: `./${ICON_FOLDER}/fight_computer_scissors.png` 
-};
-
-const PLAYER_ICONS = {
-    rock: `./${ICON_FOLDER}/fight_player_rock.png`,
-    paper: `./${ICON_FOLDER}/fight_player_paper.png`,
-    scissors: `./${ICON_FOLDER}/fight_player_scissors.png`
+const ICONS = {
+    rock: `./${ICON_FOLDER}/fight_rock.png`,
+    paper: `./${ICON_FOLDER}/fight_paper.png`,
+    scissors: `./${ICON_FOLDER}/fight_scissors.png` 
 };
 
 function getComputerChoice() {    
@@ -60,16 +54,15 @@ function updateIcons(playerSelection, computerSelection) {
     let playerImage = document.createElement('img');
     let computerImage = document.createElement('img');
     
-    playerImage.setAttribute('src', PLAYER_ICONS[playerSelection]);
+    playerImage.setAttribute('src', ICONS[playerSelection]);
     playerImage.setAttribute('alt', `Image of ${playerSelection}`);
 
-    computerImage.setAttribute('src', COMPUTER_ICONS[computerSelection]);
+    computerImage.setAttribute('src', ICONS[computerSelection]);
     computerImage.setAttribute('alt', `Image of ${computerSelection}`);
 
     playerFrame.appendChild(playerImage);
     computerFrame.appendChild(computerImage);
 }
-
 
 function resetIcons() {
     let playerImage = document.querySelector('.selection#player > img');

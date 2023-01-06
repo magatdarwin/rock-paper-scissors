@@ -99,6 +99,11 @@ body {
   width: 250px;
 }
 
+.versus .selection#computer {
+  width: 250px;
+  transform: scaleX(-1);
+}
+
 .selection img {
   height: 100%;
   width: 100%;

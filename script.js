@@ -1,13 +1,12 @@
 const CHOICES = ['rock', 'paper', 'scissors'];
-let PLAYER_SCORE = 0;
-let COMPUTER_SCORE = 0;
-
 const ICON_FOLDER = 'images';
 const ICONS = {
     rock: `./${ICON_FOLDER}/fight_rock.png`,
     paper: `./${ICON_FOLDER}/fight_paper.png`,
     scissors: `./${ICON_FOLDER}/fight_scissors.png` 
 };
+let PLAYER_SCORE = 0;
+let COMPUTER_SCORE = 0;
 
 function getComputerChoice() {    
     // Returns a random value between indexes 0 and 2
